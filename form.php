@@ -92,7 +92,6 @@
     </style>
 </head>
 <body>
-
     <div class="form-card">
         <div class="form-header">
             <h4 class="mb-1 fw-bold">Tambah Penghuni Baru</h4>
@@ -100,34 +99,34 @@
         </div>
 
         <div class="form-body">
-            <form action="#" method="POST">
+            <form action="proses_tambah.php" method="POST">
                 
                 <div class="mb-3">
                     <label class="form-label">Nama Lengkap</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Contoh: Ahmad Hidayat" required>
+                        <input type="text" name="nama" class="form-control" placeholder="Contoh: Ahmad Hidayat" required>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label class="form-label">Nomor Kamar</label>
-                        <input type="text" class="form-control" placeholder="A-01" required>
+                        <input type="text" name="kamar" class="form-control" placeholder="A-01" required>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label class="form-label">Asal Daerah (Kota)</label>
-                        <input type="text" class="form-control" placeholder="Jakarta" required>
+                        <input type="text" name="asal" class="form-control" placeholder="Jakarta" required>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Alamat Email</label>
-                    <input type="email" class="form-control" placeholder="nama@email.com">
+                    <input type="email" name="email" class="form-control" placeholder="nama@email.com">
                 </div>
 
                 <div class="mb-4">
                     <label class="form-label">Status Pembayaran</label>
-                    <select class="form-select">
+                    <select name="status_pembayaran" class="form-select">
                         <option selected disabled>-- Pilih Status --</option>
                         <option value="lunas">Lunas</option>
                         <option value="tunggakan">Tunggakan</option>
@@ -135,7 +134,7 @@
                 </div>
 
                 <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary btn-submit">
+                    <button type="submit" name="submit" class="btn btn-primary btn-submit">
                         <i class="bi bi-save me-2"></i>Simpan Data Penghuni
                     </button>
                     <button type="reset" class="btn btn-light btn-submit text-muted">

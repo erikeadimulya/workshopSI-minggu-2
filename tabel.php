@@ -142,22 +142,32 @@
                                 <th class="text-center">AKSI</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>A-01</strong></td>
-                                <td>Ahmad Hidayat</td>
-                                <td><span class="badge bg-primary-subtle text-primary px-3 py-2">Jakarta</span></td>
-                                <td><span class="badge bg-success-subtle text-success px-3">Lunas</span></td>
-                                <td class="text-center">
-                                    <button class="btn btn-light btn-sm rounded-3 border"><i class="bi bi-pencil-square"></i></button>
-                                </td>
-                            </tr>
-                            </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </main>
+        <tbody>
+        <?php include 'koneksi.php';
+            $query = mysqli_query($conn, "SELECT * FROM penghuni ORDER BY id DESC");
+            while ($data = mysqli_fetch_array($query)) {
+            ?>
+            <tr>                  
+                <td><strong><?php echo $data['kamar']; ?></strong></td>
+                <td><?php echo $data['nama']; ?></td>
+                <td>
+                    <span class="badge bg-primary-subtle text-primary px-3 py-2">
+                    <?php echo $data['asal']; ?>
+                    </span>
+                </td>
+                <td>
+                    <span class="badge <?php echo ($data['status_pembayaran'] == 'Lunas') ? 'bg-success-subtle text-success' : 'bg-warning-subtle text-warning'; ?> px-3">
+                    <?php echo $data['status_pembayaran']; ?>
+                    </span>
+                </td>
+                <td class="text-center">
+                <button class="btn btn-light btn-sm rounded-3 border"><i class="bi bi-pencil-square"></i></button>
+                </td>
+            </tr>
+        <?php }?>
+    </tbody>
+</table>
+</main>
 
     <footer class="custom-footer">
     <div class="container text-center">
@@ -172,7 +182,6 @@
         
     </div>
 </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
