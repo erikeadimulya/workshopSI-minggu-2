@@ -69,7 +69,6 @@
     </style>
 </head>
 <body>
-
     <div class="hero-card p-5 text-center">
         <div class="icon-box">
             <i class="bi bi-house-heart-fill"></i>

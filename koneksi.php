@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "root"; // <--- Ganti di sini dari "" menjadi "root"
 $db   = "kos_delta";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
